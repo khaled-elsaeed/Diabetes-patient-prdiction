@@ -33,10 +33,10 @@ This project aims to predict whether a patient has diabetes based on certain dia
 
 ### Model Accuracy:
 
-- **Logistic Regression**: {accuracy_lr:.2%}
-- **Decision Tree**: {accuracy_dt:.2%}
-- **Random Forest**: {accuracy_rf:.2%}
-- **SVM**: {accuracy_svm:.2%}
+- **Logistic Regression**: 75.97% (Note: The model did not fully converge; consider adjusting parameters for better convergence)
+- **Decision Tree**: 66.88%
+- **Random Forest**: 70.78%
+- **SVM**: 74.68%
 
 ## Confusion Matrix Visualization
 
@@ -46,4 +46,29 @@ This project aims to predict whether a patient has diabetes based on certain dia
 
 The trained Logistic Regression model is saved using joblib for future use.
 
-Feel free to explore and contribute to the project!
+## Running the Project
+
+### Prerequisites
+
+- Python
+- Flask
+
+### Steps
+
+1. **Clone Repository:**
+   ```bash
+   git clone https://github.com/your-username/diabetes-prediction.git
+2. **Navigate to Project Directory:**
+  cd diabetes-prediction
+
+3. **Run Flask App:**
+  python app.py
+
+5. **Access Web Application:**
+  Open http://127.0.0.1:5000/ in your browser.
+
+6. **Predict Diabetes:**
+  Fill the form with patient data and click "Predict."
+
+7. **View Result:**
+  See the prediction result on the webpage.
