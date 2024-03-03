@@ -1,0 +1,77 @@
+<!-- templates/result.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diabetes Prediction Result</title>
+    <!-- Link to Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        body {
+            background-image: url('/static/images/picture.jpg'); /* Replace with your background image path */
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        .card {
+            max-width: 600px;
+            margin: auto;
+            background-color: rgba(255, 255, 255, 0.8); /* Adjust the alpha value for transparency */
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Separate class for high-risk result */
+        .result-high-risk {
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-top: 20px;
+            color: red;
+        }
+
+        /* Separate class for normal-risk result */
+        .result-normal-risk {
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-top: 20px;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="card">
+            <div class="card-header">
+                <h2 class="text-center">Prediction Result</h2>
+            </div>
+            <div class="card-body">
+                <!-- Dynamically set class based on the prediction -->
+                <div class="{% if prediction == 'High risk of diabetes' %}result-high-risk{% else %}result-normal-risk{% endif %}">
+                    {{ prediction }}
+                </div>
+                <div class="text-center mt-3">
+                    <a href="/" class="btn btn-primary btn-block">New Predict</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Optional: Include Bootstrap JS for additional functionality -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>

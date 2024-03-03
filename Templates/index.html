@@ -1,0 +1,129 @@
+<!-- templates/index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diabetes Prediction</title>
+    <!-- Link to Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        body {
+            background-image: url('/static/images/ABCD2.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        /* Smaller form with responsive design */
+        .card {
+            max-width: 600px;
+            margin: auto;
+            background-color: rgba(255, 255, 255, 0.8); /* Adjust the alpha value for transparency */
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            
+        }
+
+        /* Add more styles as needed */
+
+        /* Two-row form layout */
+        .form-group {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card mt-5">
+            <div class="card-header">
+                <h2 class="text-center">Diabetes Prediction</h2>
+            </div>
+            <div class="card-body">
+                <form method="post" action="/predict">
+                    <!-- First Row -->
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="Pregnancies">Pregnancies:</label>
+                                <input type="number" class="form-control" id="Pregnancies" name="Pregnancies" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="Glucose">Glucose:</label>
+                                <input type="number" class="form-control" id="Glucose" name="Glucose" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Second Row -->
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="BloodPressure">Blood Pressure:</label>
+                                <input type="number" class="form-control" id="BloodPressure" name="BloodPressure" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="SkinThickness">Skin Thickness:</label>
+                                <input type="number" class="form-control" id="SkinThickness" name="SkinThickness" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Third Row -->
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="Insulin">Insulin:</label>
+                                <input type="number" class="form-control" id="Insulin" name="Insulin" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="BMI">BMI:</label>
+                                <input type="number" class="form-control" id="BMI" name="BMI" step="0.01" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Fourth Row -->
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="DiabetesPedigreeFunction">Diabetes Pedigree Function:</label>
+                                <input type="number" class="form-control" id="DiabetesPedigreeFunction" name="DiabetesPedigreeFunction" step="0.01" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="Age">Age:</label>
+                                <input type="number" class="form-control" id="Age" name="Age" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" class="btn btn-primary btn-block">Predict</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Optional: Include Bootstrap JS for additional functionality -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
